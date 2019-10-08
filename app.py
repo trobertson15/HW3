@@ -1,10 +1,10 @@
 from flask import Flask
-
+from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "hello world!"
+    return render_template('index.html', pageTitle='Loan Payment Calculator')
 
 
 if __name__ == '__main__':
