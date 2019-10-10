@@ -1,9 +1,86 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<div class=loancalculation>
+  <span class="underline"> <h2> Loan Payment Calculation Steps and Requirements </h2> </span>
+    <ul>
+    <h4>
+      <li> <b>Loan amount (A)</b>
+        <br>
+      <li> <b>Number of periodic payments (n)</b> = payments per year * number of years
+        <br>
+      <ul>
+        <li> Insert values into 'Number of Years in Loan' and 'Payments Per Year' boxes
+        <li> Press 'Periodic Payments' button
+      </ul>
+      <li> <b>Periodic interest rate (i)</b> = annual rate / Payments per year
+      <ul>
+        <li> Insert values into 'Payments Per Year' and 'Annual Interest Rate' boxes
+        <li> Press 'Interest Rate' button
+      </ul>
+      <li> <b>Discount Factor calculation:</b>
+      <br>
+        <ul>
+          <li> Discount Factor (D) = ((( 1 + i )^n ) - 1 ) / ( i ( 1+ i)^n)
+          <li> Insert values into 'Number of Periodic Payments' and 'Periodic Interest Rate' boxes
+          <li> Press 'Discount Factor' button
+        </ul>
+      <li> <b>Loan Payment</b> = Loan Amount (A) / Discount Factor (D)
+        <ul>
+          <li> Insert values into 'Loan Amount' and 'Discount Factor' boxes
+          <li> Press 'Loan Payment' button
+        </ul>
+    </h4>
+    </ul>
+</div>
+<br>
+<br>
+<p> <img src="static/images/Loan_Calculator.jpg" alt="Calculator Photo" style="float:left" width="550" height= "350">
+<p> <img src="static/images/Car_Calculator.jpg" alt="Calculator Photo" style="float:right" width="550" height= "350">
+  <form  method="post">
+  <div class=databox>
+  <table>
+    <h3> <center> <b>Loan Calculator</b> </center> </h3>
+    <tr>
+      <td> Number of Years in Loan: </td> <td> <input type="text" name="NoOfYears" /> </td>
+    </tr>
+    <tr>
+      <td> Payments Per Year: </td> <td> <input type="text" name="PaymentsPerYear" /> </td>
+    </tr>
+    <tr>
+      <td> Annual Interest Rate: </td> <td> <input type="text" name="AnnualRate" /> </td>
+    </tr>
+</table>
+  <br>
+  <input class="button" type="submit" formaction="/multiply" value="Periodic Payments" />
+  <input class="button" type="submit" formaction="/divide" value="Interest Rate" />
+</form>
+<br>
+<br>
+<form  method="post">
+  <table>
+    <tr>
+      <td> Loan Amount (A): </td> <td> <input type="text" name="LoanAmount" /> </td>
+    </tr>
+    <tr>
+      <td> Number of Periodic Payments (n): </td> <td> <input type="text" name="NoOfPayments" /> </td>
+    </tr>
+    <tr>
+      <td> Periodic Interest Rate (i): </td> <td> <input type="text" name="InterestRate" /> </td>
+    </tr>
+    <tr>
+      <td> Discount Factor (D): </td> <td> <input type="text" name="DiscountFactor" /> </td>
+    </tr>
+  </table>
+    <br>
+    <input class="button" type="submit" formaction="/discountfactor" value="Discount Factor" />
+    <input class="button" type="submit" formaction="/calculation" value="Loan Payment" />
+  <p> {{ display }} </p>
+  </p>
+  </p>
+  </div>
+</form>
 
-      <h2> This is my Flask server! </h2>
-
-
+<div style="clear:both;"></div>
 
  {% endblock %}
