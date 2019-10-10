@@ -1,0 +1,48 @@
+body{
+	background-color: #E6E6FA;
+}
+h1 {
+	font-style: times new roman;
+	font-size: 40px;
+	font-weight: bold;
+}
+h2 {
+	font-style: times new roman;
+	font-size: 28px;
+	font-weight: normal;
+}
+h3 {
+	font-style: times new roman;
+	font-size: 22px;
+	font-weight: normal;
+}
+h4 {
+	font-style:times new roman;
+	font-size: 18px;
+	font-weight: normal;
+}
+.loancalculation{
+	display: block;
+	border: 1px solid black;
+	background-color: #FFFFF0;
+	width:40%;
+	margin: 0 auto;
+	text-align:left;
+	padding:10px;
+  line-height: 1.2;
+}
+.databox{
+	display: block;
+	border: 1px solid black;
+	background-color: #FFFAFA;
+  width:30%;
+	margin: 0 auto;
+	text-align:left;
+	padding:15px;
+  line-height: 1.2;
+}
+.underline {
+	text-decoration: underline;
+  vertical-align: middle;
+  text-align: center;
+}
